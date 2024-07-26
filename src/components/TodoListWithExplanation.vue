@@ -100,7 +100,13 @@ const addTodo = (): void => {
   tempTodo.value = ''
 }
 
-const removeTodo = (id: string): void => {
+// 型別別名: 用 type 關鍵字定義 ()=>{} 型別
+// p.s. 我不會先用 type 定義，基本上都直接註記
+type FRemoveTodo = (id: string) => void
+
+const removeTodo: FRemoveTodo = (id) => {
+  // 型別註記
+  // const removeTodo = (id: string): void => {
   todoItems.filter((item) => item.id === id)[0].status =
     null
 }
